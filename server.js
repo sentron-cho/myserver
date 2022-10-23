@@ -11,11 +11,8 @@ app.get('/',function(request, response){
     response.sendFile( path.join(__dirname, 'public/main.html'))
 })
 
-// 데이터 받아서 전송 예시 
-app.get('/api/hello', (req, res) => {
-    console.log("===========> /api/hello call!")
-    res.send('HelloWorld!'); 
-});
+const hello = require("./src/api/hello");
+app.use("/api/hello", hello);
 
 const http = require('http').createServer(app);
 http.listen(8080, function () {
