@@ -18,3 +18,26 @@ const http = require('http').createServer(app);
 http.listen(8080, function () {
   console.log('listening on 8080')
 }); 
+
+
+// const Console = require('./src/console');
+// Console.time()
+// Console.log()
+// Console.dir()
+// Console.rest()
+// Console.trace()
+
+// const Timer = require('./src/timer');
+// Timer.timeout()
+// Timer.interval()
+// Timer.clear()
+// Timer.counter()
+
+console.log(__filename);
+console.log(__dirname);
+
+const System = require('./src/system');
+System.info()
+
+
+// consoletest()
