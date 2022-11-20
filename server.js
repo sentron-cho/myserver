@@ -11,8 +11,14 @@ app.get('/',function(request, response){
     response.sendFile( path.join(__dirname, 'public/main.html'))
 })
 
+const bodyparser = require('body-parser');
+app.use(bodyparser.urlencoded({extended: false}))
+app.use(bodyparser.json())
+
 const hello = require("./src/api/hello");
 app.use("/api/hello", hello);
+
+app.use("/api/http", require("./src/api/http"));
 
 const http = require('http').createServer(app);
 http.listen(8080, function () {
